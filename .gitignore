@@ -1,0 +1,13 @@
+web/bundles/
+web/files
+web/assets
+app/bootstrap*
+app/cache/*
+app/logs/*
+app/config/parameters.ini
+vendor
+vendor/*
+src/Symfony/
+*.swp
+*.swo
+.idea/
