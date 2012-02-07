@@ -58,3 +58,36 @@ swiftmailer:
 jms_security_extra:
     secure_controllers:  true
     secure_all_services: false
+
+sonata_page:
+    multisite: false
+    ignore_route_patterns:
+        - /(.*)admin(.*)/   # ignore admin route, ie route containing 'admin'
+        - /^_(.*)/          # ignore symfony routes
+
+    ignore_routes:
+        - sonata_page_esi_cache
+        - sonata_page_js_sync_cache
+        - sonata_page_js_async_cache
+        - sonata_page_apc_cache
+
+    ignore_uri_patterns:
+        - /admin(.*)/   # ignore admin route, ie route containing 'admin'
+
+    services:
+        sonata.page.block.text:
+        sonata.page.block.action:
+        sonata.page.block.container:
+        sonata.page.block.children_page:
+
+    page_defaults:
+        homepage: {decorate: false} # disable decoration for homepage, key - is a page route
+
+    default_template: default # template key from templates section, used as default for pages
+    templates:
+        default: { path: 'SonataPageBundle::layout.html.twig', name: default }
+
+    # manage the http errors
+    catch_exceptions:
+        not_found: [404]    # render 404 page with "not_found" key (name generated: _page_internal_error_{key})
+        fatal:     [500]    # so you can use the same page for different http errors or specify specific page for each error
