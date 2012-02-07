@@ -20,8 +20,12 @@ class AppKernel extends Kernel
             //
             new ElHornair\Bundle\CoreBundle\ElHornairCoreBundle(),
             //
-            new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
+            new Sonata\AdminBundle\SonataAdminBundle(),
+            new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
             new Sonata\PageBundle\SonataPageBundle(),
+            new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
+            new Knp\Bundle\MenuBundle\KnpMenuBundle(),
+            new Application\Sonata\PageBundle\ApplicationSonataPageBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
