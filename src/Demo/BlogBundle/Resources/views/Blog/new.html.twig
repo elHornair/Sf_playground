@@ -1,0 +1,11 @@
+<form action="{{ path('blog_new') }}" method="post" {{ form_enctype(form) }}>
+    {{ form_errors(form) }}
+    {{ form_row(form.title) }}
+    <div class="custom_class">
+        {{ form_label(form.date) }}
+        {{ form_errors(form.date) }}
+        {{ form_widget(form.date) }}
+    </div>
+    {{ form_rest(form) }}
+    <input type="submit" />
+</form>

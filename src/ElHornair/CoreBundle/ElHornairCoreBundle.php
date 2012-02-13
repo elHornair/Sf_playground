@@ -1,6 +1,6 @@
 <?php
 
-namespace ElHornair\Bundle\CoreBundle;
+namespace ElHornair\CoreBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

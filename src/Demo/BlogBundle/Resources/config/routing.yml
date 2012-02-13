@@ -1,0 +1,3 @@
+blog_new:
+    pattern:  /blog/new
+    defaults: { _controller: DemoBlogBundle:Blog:new }
